@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import {
     Sheet,
@@ -15,11 +14,11 @@ import Link from 'next/link'
 import { sidebarLinks } from '@/constants'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-
-  
+import Footer from './Footer'
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
+  
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
@@ -66,7 +65,6 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                 {item.label}
                             </p>
                             </Link>
-
                       </SheetClose>
                             
                         )
@@ -75,9 +73,8 @@ const MobileNav = ({ user }: MobileNavProps) => {
                 </nav>
               </SheetClose>
 
-              FOOTER
+              <Footer user={user} type="mobile" />
             </div>
- 
         </SheetContent>
       </Sheet>
     </section>
